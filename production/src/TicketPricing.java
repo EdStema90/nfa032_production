@@ -9,6 +9,7 @@ public class TicketPricing {
         departureStation= sc.next();
         System.out.println("Quelle est votre gare d'arrivée:");
         arrivalStation = sc.next();
+        tabPrinter(vierzonOrléan);
 
         System.out.println(departureStation);
         System.out.println(arrivalStation);
@@ -21,5 +22,8 @@ public class TicketPricing {
     }
 
     public static void tabPrinter (String[][] stationTab){
+        for (int j=0; j<= stationTab.length-1; j++){
+            System.out.println(stationTab[j][0]);
+        }
     }
 }
