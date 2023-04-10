@@ -1,19 +1,23 @@
+import java.util.Scanner;
+
 public class Test {
     public static void main(String[] args) {
-        int [] tab1 = {3,5,11,2,28};
-        for (int i =0; i<=tab1.length-1; i++){
-            for(int j=0;j<=tab1.length-1;j++){
-                if (tab1[i]<tab1[j]){
-                    int reserve = tab1[i];
-                    tab1[i]=tab1[j];
-                    tab1[j]=reserve;
-                }
-            }
-        }
-        System.out.print("tab1 ={");
-        for(int i=0; i<=tab1.length-1; i++){
-            System.out.print(tab1[i]+",");
-        }
-        System.out.print("}");
+        planete Mercure = new planete();
+        Mercure.nom
+    }
+}
+class planete{
+    String name, matiere;
+    int diametre;
+    
+    public static void planetCreation (){
+        Scanner sc = new Scanner(System.in);
+        String name= null;
+        System.out.println("Quel est le nom de cette planète.?");
+        name = sc.next();
+
+
+
+        
     }
 }
