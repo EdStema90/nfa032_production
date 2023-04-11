@@ -24,16 +24,21 @@ public class ComptesTest {
             }
         }
         String accountName = "c"+ accountNumber;
-        //J'ai le nom du compte, comment nommer mon compte en création à partir de là?
-        for (int i=0;i<=cTab.length-1; i++){
+        for (int i=0;i<=cTab.length-1; i++) {
             System.out.println("Quel est le nom du titulaire de ce compte?:");
             String holderName = sca.next();
             System.out.println("Quel est son solde de départ?");
-            int initialBalance= sca.nextInt();
-            cTab[i] = Comptes accountName;
-            // Ici, je créer le compte du nom accountName, je l'initialise et l'instancie en appliquant les valeurs holderName, initialeBalance.
+            int initialBalance = sca.nextInt();
+            cTab[i] = new Comptes(accountNumber, holderName, initialBalance);
         }
 
+        for (int i=0; i<=cTab.length-1; i++){
+            cTab[i].deposer(200+ 100*i);
+        }
+
+        for ( int i=0; i<=cTab.length-1; i++ ){
+            System.out.println();
+        }
 
         sca.close();
     }

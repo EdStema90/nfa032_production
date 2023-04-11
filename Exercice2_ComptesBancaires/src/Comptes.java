@@ -1,6 +1,8 @@
 public class Comptes{
+     private String accountNumber;
      private String titulaire;
      private int solde =0;
+
 
     public void setTitulaire(String titulaire) {
         this.titulaire = titulaire;
@@ -18,7 +20,15 @@ public class Comptes{
         this.solde = solde;
     }
 
-    public Comptes(String titulaire, int montant) {
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public Comptes(String accountNumber, String titulaire, int montant) {
     this.solde = montant;
     this.titulaire= titulaire;
     }
@@ -37,6 +47,7 @@ public class Comptes{
         destination.deposer(montant);
     }
     void afficher(){
-        System.out.println( this.titulaire +", votre solde est de " + solde +"euros");
+        System.out.println( "Compte numéro: " + accountNumber+ ". Titulaire: " + this.titulaire +". Solde: " + solde +"euros");
     }
+    void a
 }
