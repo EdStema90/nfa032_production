@@ -1,34 +1,33 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class TicketPricing {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String departureStation,arrivalStation;
-        String [][] vierzonOrléan = {{"Vierzon","Salbris"},{"Salbris","Nouans"},{"Nouans","Lamotte-Beuvron"},{"Lamotte-Beuvron","La Ferté Saint-Aubin"},{"La Ferté Saint-Aubin","Orléans"}};
+        String researchedStation;
+        String [] vierzonOrléan = {"vierzon","salbris","nouans","lamotte-beuvron", "la ferté saint-aubin","orléans"};
         System.out.println("Quelle est votre gare de départ:");
-        departureStation= sc.next();
-        System.out.println("Quelle est votre gare d'arrivée:");
-        arrivalStation = sc.next();
-        System.out.println(stationIndex(vierzonOrléan,arrivalStation, 1));
-        tabPrinter(vierzonOrléan,1);
+        researchedStation= sc.next();
+        researchedStation= researchedStation.toLowerCase(Locale.ROOT);
+        System.out.println(stationIndex(vierzonOrléan, researchedStation));
+        tabPrinter(vierzonOrléan);
 
-        System.out.println(departureStation);
-        System.out.println(arrivalStation);
     }
 
-    public static int stationIndex (String[][] railNetwork, String cityName, int columnIndex ){
-        int stationIndex=0;
-        for(int i =0; i<=railNetwork[i].length-1; i++){
-            if(railNetwork[i][columnIndex]== cityName){
-                stationIndex=i;
+    public static int stationIndex (String[] railNetwork, String cityName ){
+        int index=0;
+        for (int i =0; i<=railNetwork.length-1; i++){
+            if (cityName.equals(railNetwork[i])){
+                index=i;
             }
+
         }
-        return stationIndex;
+        return index;
     }
 
-    public static void tabPrinter (String[][] stationTab, int columnIndex){
-        for (int j=0; j<= stationTab.length-1; j++){
-            System.out.println(stationTab[j][columnIndex]);
+    public static void tabPrinter (String[] stationTab){
+        for (int i=0; i<= stationTab.length-1; i++){
+            System.out.println(stationTab[i]);
         }
     }
 }

@@ -2,22 +2,25 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        planete Mercure = new planete();
-        Mercure.nom
+
     }
 }
-class planete{
+class planete {
     String name, matiere;
     int diametre;
-    
-    public static void planetCreation (){
+
+    public planete(String name, String matiere, int diametre) {
+
+        this.name = name;
+        this.matiere = matiere;
+        this.diametre = diametre;
+    }
+
+    public void planetCreation() {
         Scanner sc = new Scanner(System.in);
-        String name= null;
         System.out.println("Quel est le nom de cette planète.?");
-        name = sc.next();
-
-
-
-        
+        this.name = sc.next();
+        System.out.println("Quel est la matière de cette planète.?");
+        this.matiere = sc.next();
     }
 }

@@ -13,23 +13,12 @@ public class ComptesTest {
     //    cArnaud.afficher();
 
         Comptes [] cTab = new Comptes[10];
-        String accountNumber=null;
-        for (int i =0; i<=cTab.length-1; i++) {
-            if (i == 0) {
-                accountNumber = "001";
-            } else if (i > 0 && i < 10) {
-                accountNumber = "00" + i;
-            } else if (i > 9 && i < 100) {
-                accountNumber = "0" + i;
-            }
-        }
-        String accountName = "c"+ accountNumber;
+
         for (int i=0;i<=cTab.length-1; i++) {
             System.out.println("Quel est le nom du titulaire de ce compte?:");
             String holderName = sca.next();
-            System.out.println("Quel est son solde de départ?");
-            int initialBalance = sca.nextInt();
-            cTab[i] = new Comptes(accountNumber, holderName, initialBalance);
+            String accountNumber= accountNumSetter(i);
+            cTab[i] = new Comptes( holderName, accountNumber);
         }
 
         for (int i=0; i<=cTab.length-1; i++){
@@ -39,7 +28,18 @@ public class ComptesTest {
         for ( int i=0; i<=cTab.length-1; i++ ){
             System.out.println();
         }
-
         sca.close();
+    }
+    public String accountNumSetter ( int tabIndex){
+        String accountNumber=  null;
+
+        if (tabIndex == 0) {
+            accountNumber = "001";
+        } else if (tabIndex > 0 && tabIndex < 10) {
+            accountNumber = "00" + tabIndex;
+        } else if (tabIndex > 9 && tabIndex < 100) {
+            accountNumber = "0" + tabIndex;
+        }
+        return accountNumber;
     }
 }

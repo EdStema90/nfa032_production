@@ -28,8 +28,9 @@ public class Comptes{
         this.accountNumber = accountNumber;
     }
 
-    public Comptes(String accountNumber, String titulaire, int montant) {
-    this.solde = montant;
+    public Comptes( String titulaire, String accountNum ) {
+    this.solde = 0;
+    setAccountNumber(accountNum);
     this.titulaire= titulaire;
     }
 
@@ -49,5 +50,4 @@ public class Comptes{
     void afficher(){
         System.out.println( "Compte numéro: " + accountNumber+ ". Titulaire: " + this.titulaire +". Solde: " + solde +"euros");
     }
-    void a
 }
